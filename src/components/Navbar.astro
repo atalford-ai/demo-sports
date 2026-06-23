@@ -1,0 +1,42 @@
+---
+import config from '../../site.json';
+---
+<header class="navbar bg-base-100/80 backdrop-blur-md sticky top-0 z-50 border-b border-base-300/50">
+  <div class="navbar-start">
+    <a href="/" class="btn btn-ghost text-xl font-heading font-bold tracking-tight">
+      <span class="text-accent">{config.business_name.split(' ')[0]}</span>&nbsp;{config.business_name.split(' ').slice(1).join(' ')}
+    </a>
+  </div>
+
+  <nav class="navbar-center hidden lg:flex">
+    <ul class="menu menu-horizontal px-1 gap-1">
+      <li><a href="#roster" class="font-medium">Roster</a></li>
+      <li><a href="#schedule" class="font-medium">Schedule</a></li>
+      <li><a href="#stats" class="font-medium">Stats</a></li>
+      <li><a href="#about" class="font-medium">About</a></li>
+      <li><a href="#registration" class="font-medium">Register</a></li>
+      <li><a href="#contact" class="font-medium">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="navbar-end gap-2">
+    <a href="#registration" class="btn btn-accent btn-sm hidden lg:inline-flex">Register Now</a>
+
+    <!-- Mobile menu -->
+    <div class="dropdown dropdown-end lg:hidden">
+      <label tabindex="0" class="btn btn-ghost btn-circle">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
+        </svg>
+      </label>
+      <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow-lg bg-base-200 rounded-box w-52">
+        <li><a href="#roster">Roster</a></li>
+        <li><a href="#schedule">Schedule</a></li>
+        <li><a href="#stats">Stats</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#registration">Register</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</header>

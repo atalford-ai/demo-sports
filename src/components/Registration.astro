@@ -1,0 +1,125 @@
+---
+import config from '../../site.json';
+const reg = config.registration;
+---
+<section id="registration" class="py-24 px-6 lg:px-12">
+  <div class="container mx-auto max-w-5xl">
+    <div class="text-center mb-16 fade-in-up">
+      <span class="badge badge-outline border-accent text-accent text-xs tracking-widest uppercase mb-4">Join the Team</span>
+      <h2 class="text-4xl md:text-5xl font-heading font-bold">Tryout Registration</h2>
+      <p class="text-base-content/60 mt-4 max-w-lg mx-auto">Ready to compete? Register for upcoming tryouts and take your game to the next level.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-12">
+      <!-- Form -->
+      <div class="fade-in-up">
+        <form class="space-y-5">
+          <div>
+            <label class="label text-sm font-medium">Player Name</label>
+            <input type="text" placeholder="Player's full name" class="input input-bordered w-full bg-base-100 focus:border-accent" />
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="label text-sm font-medium">Age</label>
+              <input type="number" placeholder="Age" min="8" max="18" class="input input-bordered w-full bg-base-100 focus:border-accent" />
+            </div>
+            <div>
+              <label class="label text-sm font-medium">Grade</label>
+              <select class="select select-bordered w-full bg-base-100 focus:border-accent">
+                <option disabled selected>Select grade</option>
+                <option>6th</option>
+                <option>7th</option>
+                <option>8th</option>
+                <option>9th</option>
+                <option>10th</option>
+                <option>11th</option>
+                <option>12th</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label class="label text-sm font-medium">Position</label>
+            <select class="select select-bordered w-full bg-base-100 focus:border-accent">
+              <option disabled selected>Select position</option>
+              <option>Point Guard</option>
+              <option>Shooting Guard</option>
+              <option>Small Forward</option>
+              <option>Power Forward</option>
+              <option>Center</option>
+            </select>
+          </div>
+          <div class="divider text-xs text-base-content/40">Parent / Guardian Info</div>
+          <div>
+            <label class="label text-sm font-medium">Parent / Guardian Name</label>
+            <input type="text" placeholder="Full name" class="input input-bordered w-full bg-base-100 focus:border-accent" />
+          </div>
+          <div>
+            <label class="label text-sm font-medium">Email</label>
+            <input type="email" placeholder="you@email.com" class="input input-bordered w-full bg-base-100 focus:border-accent" />
+          </div>
+          <div>
+            <label class="label text-sm font-medium">Phone</label>
+            <input type="tel" placeholder="(555) 123-4567" class="input input-bordered w-full bg-base-100 focus:border-accent" />
+          </div>
+          <button type="submit" class="btn btn-accent w-full">
+            Submit Registration
+          </button>
+        </form>
+      </div>
+
+      <!-- Tryout Info -->
+      <div class="fade-in-up space-y-8" style="animation-delay: 0.2s;">
+        <div class="bg-base-200 rounded-2xl p-6 border border-base-300/50">
+          <h3 class="font-heading font-semibold text-lg mb-4">Tryout Details</h3>
+          <div class="space-y-4">
+            <div>
+              <p class="text-sm text-base-content/50 uppercase tracking-wider">Dates</p>
+              {reg.tryout_dates.map((date: string) => (
+                <p class="font-medium">{date}</p>
+              ))}
+            </div>
+            <div>
+              <p class="text-sm text-base-content/50 uppercase tracking-wider">Location</p>
+              <p class="font-medium">{reg.location}</p>
+            </div>
+            <div>
+              <p class="text-sm text-base-content/50 uppercase tracking-wider">Registration Fee</p>
+              <p class="font-medium text-accent text-xl">{reg.cost}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-base-200 rounded-2xl p-6 border border-base-300/50">
+          <h3 class="font-heading font-semibold text-lg mb-4">Age Groups</h3>
+          <div class="flex flex-wrap gap-2">
+            {reg.age_groups.map((group: string) => (
+              <span class="badge badge-lg badge-outline border-accent text-accent">{group}</span>
+            ))}
+          </div>
+        </div>
+
+        <div class="bg-base-200 rounded-2xl p-6 border border-base-300/50">
+          <h3 class="font-heading font-semibold text-lg mb-3">What to Bring</h3>
+          <ul class="space-y-2 text-base-content/70">
+            <li class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              Basketball shoes & athletic wear
+            </li>
+            <li class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              Water bottle
+            </li>
+            <li class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              Signed parent waiver
+            </li>
+            <li class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              Positive attitude
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

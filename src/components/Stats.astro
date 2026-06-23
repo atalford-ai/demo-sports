@@ -1,0 +1,36 @@
+---
+import config from '../../site.json';
+const stats = config.stats;
+---
+<section id="stats" class="py-24 px-6 lg:px-12">
+  <div class="container mx-auto">
+    <div class="text-center mb-16 fade-in-up">
+      <span class="badge badge-outline border-accent text-accent text-xs tracking-widest uppercase mb-4">By the Numbers</span>
+      <h2 class="text-4xl md:text-5xl font-heading font-bold">Team Stats</h2>
+      <p class="text-base-content/60 mt-4 max-w-md mx-auto">The numbers speak for themselves.</p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 stagger-children">
+      <div class="text-center">
+        <p class="text-4xl md:text-5xl font-heading font-bold text-accent">{stats.record}</p>
+        <p class="text-sm text-base-content/50 mt-2 uppercase tracking-wider">Season Record</p>
+      </div>
+      <div class="text-center">
+        <p class="text-4xl md:text-5xl font-heading font-bold text-accent">{stats.points_per_game}</p>
+        <p class="text-sm text-base-content/50 mt-2 uppercase tracking-wider">PPG</p>
+      </div>
+      <div class="text-center">
+        <p class="text-4xl md:text-5xl font-heading font-bold text-accent">{stats.tournament_wins}</p>
+        <p class="text-sm text-base-content/50 mt-2 uppercase tracking-wider">Tournament Wins</p>
+      </div>
+      <div class="text-center">
+        <p class="text-4xl md:text-5xl font-heading font-bold text-accent">{stats.players_developed}</p>
+        <p class="text-sm text-base-content/50 mt-2 uppercase tracking-wider">Athletes Trained</p>
+      </div>
+      <div class="text-center">
+        <p class="text-4xl md:text-5xl font-heading font-bold text-accent">{stats.years_active}</p>
+        <p class="text-sm text-base-content/50 mt-2 uppercase tracking-wider">Years Active</p>
+      </div>
+    </div>
+  </div>
+</section>

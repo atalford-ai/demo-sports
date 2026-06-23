@@ -1,0 +1,133 @@
+{
+  "business_name": "Elite Hoops",
+  "tagline": "Train Hard. Ball Harder.",
+  "description": "AAU basketball organization developing the next generation of athletes. Competitive teams, elite coaching, real results.",
+  "theme": "dark",
+  "fonts": {
+    "heading": "Oswald",
+    "body": "Roboto"
+  },
+  "is_demo": true,
+  "demo_cta": "https://altitudz.com",
+  "contact": {
+    "email": "info@elitehoops.com",
+    "phone": "(404) 555-2400",
+    "address": "1200 Courtside Drive, Atlanta, GA 30318",
+    "facility": "Elite Hoops Training Center"
+  },
+  "social": {
+    "instagram": "https://instagram.com/elitehoops",
+    "twitter": "https://twitter.com/elitehoops",
+    "youtube": "https://youtube.com/@elitehoops"
+  },
+  "sections": {
+    "hero": true,
+    "roster": true,
+    "schedule": true,
+    "stats": true,
+    "about": true,
+    "registration": true,
+    "contact": true,
+    "footer": true,
+    "gallery": false,
+    "blog": false
+  },
+  "roster": [
+    {
+      "name": "Marcus Johnson",
+      "number": 3,
+      "position": "Point Guard",
+      "grade": "10th",
+      "image": "https://images.unsplash.com/photo-1546519638-68e109498ffc?w=600&h=600&fit=crop"
+    },
+    {
+      "name": "Jaylen Carter",
+      "number": 11,
+      "position": "Shooting Guard",
+      "grade": "11th",
+      "image": "https://images.unsplash.com/photo-1574623452334-1e0ac2b3ccb4?w=600&h=600&fit=crop"
+    },
+    {
+      "name": "DeAndre Williams",
+      "number": 24,
+      "position": "Small Forward",
+      "grade": "10th",
+      "image": "https://images.unsplash.com/photo-1519861531473-9200262188bf?w=600&h=600&fit=crop"
+    },
+    {
+      "name": "Tre Robinson",
+      "number": 5,
+      "position": "Power Forward",
+      "grade": "12th",
+      "image": "https://images.unsplash.com/photo-1504450758481-7338bbe75005?w=600&h=600&fit=crop"
+    },
+    {
+      "name": "Amir Thompson",
+      "number": 32,
+      "position": "Center",
+      "grade": "11th",
+      "image": "https://images.unsplash.com/photo-1515523110800-9415d13b84a8?w=600&h=600&fit=crop"
+    },
+    {
+      "name": "Kobe Mitchell",
+      "number": 7,
+      "position": "Combo Guard",
+      "grade": "9th",
+      "image": "https://images.unsplash.com/photo-1559692048-79a3f837883d?w=600&h=600&fit=crop"
+    }
+  ],
+  "schedule": [
+    {
+      "opponent": "ATL Thunder",
+      "date": "2026-07-12",
+      "time": "10:00 AM",
+      "location": "Peachtree Sports Complex",
+      "home_away": "Away"
+    },
+    {
+      "opponent": "Georgia Stars",
+      "date": "2026-07-19",
+      "time": "2:00 PM",
+      "location": "Elite Hoops Training Center",
+      "home_away": "Home"
+    },
+    {
+      "opponent": "Southside Ballers",
+      "date": "2026-07-26",
+      "time": "11:00 AM",
+      "location": "Metro Youth Arena",
+      "home_away": "Away"
+    },
+    {
+      "opponent": "East Point Warriors",
+      "date": "2026-08-02",
+      "time": "3:00 PM",
+      "location": "Elite Hoops Training Center",
+      "home_away": "Home"
+    },
+    {
+      "opponent": "Cobb County Elite",
+      "date": "2026-08-09",
+      "time": "12:00 PM",
+      "location": "Cobb Rec Center",
+      "home_away": "Away"
+    }
+  ],
+  "stats": {
+    "record": "12-3",
+    "points_per_game": 68,
+    "tournament_wins": 4,
+    "players_developed": "50+",
+    "years_active": 6
+  },
+  "registration": {
+    "tryout_dates": ["July 15, 2026", "July 22, 2026"],
+    "age_groups": ["10U", "12U", "14U", "16U", "17U"],
+    "cost": "$250",
+    "location": "Elite Hoops Training Center"
+  },
+  "built_by": {
+    "name": "Altitudz",
+    "url": "https://altitudz.com"
+  }
+}

@@ -1,0 +1,42 @@
+---
+import config from '../../site.json';
+const games = config.schedule;
+---
+<section id="schedule" class="py-24 px-6 lg:px-12 bg-base-200/50">
+  <div class="container mx-auto">
+    <div class="text-center mb-16 fade-in-up">
+      <span class="badge badge-outline border-accent text-accent text-xs tracking-widest uppercase mb-4">Upcoming</span>
+      <h2 class="text-4xl md:text-5xl font-heading font-bold">Game Schedule</h2>
+      <p class="text-base-content/60 mt-4 max-w-md mx-auto">Check out where we're competing next.</p>
+    </div>
+
+    <div class="fade-in-up overflow-x-auto">
+      <table class="table table-zebra w-full">
+        <thead>
+          <tr class="text-base-content/70">
+            <th class="font-heading text-sm uppercase tracking-wider">Date</th>
+            <th class="font-heading text-sm uppercase tracking-wider">Time</th>
+            <th class="font-heading text-sm uppercase tracking-wider">Opponent</th>
+            <th class="font-heading text-sm uppercase tracking-wider">Location</th>
+            <th class="font-heading text-sm uppercase tracking-wider">Home/Away</th>
+          </tr>
+        </thead>
+        <tbody>
+          {games.map((game) => (
+            <tr class="hover">
+              <td class="font-medium">{new Date(game.date + 'T00:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</td>
+              <td>{game.time}</td>
+              <td class="font-semibold">{game.opponent}</td>
+              <td class="text-base-content/70">{game.location}</td>
+              <td>
+                <span class={`badge badge-sm ${game.home_away === 'Home' ? 'badge-accent' : 'badge-outline'}`}>
+                  {game.home_away}
+                </span>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,42 @@
+---
+import config from '../../site.json';
+---
+<section id="about" class="py-24 px-6 lg:px-12 bg-base-200/50">
+  <div class="container mx-auto">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <!-- Image -->
+      <div class="fade-in-up">
+        <div class="bg-base-200 rounded-3xl aspect-[4/3] overflow-hidden border border-base-300/50">
+          <img src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?w=800&h=600&fit=crop" alt="Team huddle" class="w-full h-full object-cover" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- Text -->
+      <div class="fade-in-up" style="animation-delay: 0.2s;">
+        <span class="badge badge-outline border-accent text-accent text-xs tracking-widest uppercase mb-4">Our Story</span>
+        <h2 class="text-4xl md:text-5xl font-heading font-bold mb-6">Built on the<br /><span class="text-accent">Hardwood</span></h2>
+        <p class="text-base-content/70 text-lg leading-relaxed mb-6">
+          Elite Hoops was founded with one mission: to develop young athletes who excel both on the court and in life. Based in Atlanta, we bring together the best coaching staff, elite competition, and a family-first culture that pushes every player to reach their potential.
+        </p>
+        <p class="text-base-content/70 text-lg leading-relaxed mb-8">
+          Our coaching staff brings decades of experience from college and professional basketball. We focus on fundamentals, basketball IQ, and the discipline that translates beyond the game. This is more than a team — it's a program.
+        </p>
+
+        <div class="grid grid-cols-3 gap-6">
+          <div>
+            <p class="text-3xl font-heading font-bold text-accent">{config.stats.players_developed}</p>
+            <p class="text-sm text-base-content/50">Athletes</p>
+          </div>
+          <div>
+            <p class="text-3xl font-heading font-bold text-accent">{config.stats.tournament_wins}</p>
+            <p class="text-sm text-base-content/50">Titles</p>
+          </div>
+          <div>
+            <p class="text-3xl font-heading font-bold text-accent">{config.stats.years_active}</p>
+            <p class="text-sm text-base-content/50">Years</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
