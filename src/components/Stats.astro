@@ -1,35 +1,71 @@
 ---
 import config from '../../site.json';
 const stats = config.stats;
+
+// Calculate win percentage from record "12-3"
+const [wins, losses] = stats.record.split('-').map(Number);
+const winPct = Math.round((wins / (wins + losses)) * 100);
+// Scoring efficiency (PPG out of hypothetical max 100)
+const scoringEff = Math.round((stats.points_per_game / 100) * 100);
 ---
 <section id="stats" class="py-24 px-6 lg:px-12">
   <div class="container mx-auto">
-    <div class="text-center mb-16 fade-in-up">
+    <div class="text-center mb-16">
       <span class="badge badge-outline border-accent text-accent text-xs tracking-widest uppercase mb-4">By the Numbers</span>
       <h2 class="text-4xl md:text-5xl font-heading font-bold">Team Stats</h2>
       <p class="text-base-content/60 mt-4 max-w-md mx-auto">The numbers speak for themselves.</p>
     </div>
 
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 stagger-children">
-      <div class="text-center">
-        <p class="text-4xl md:text-5xl font-heading font-bold text-accent">{stats.record}</p>
-        <p class="text-sm text-base-content/50 mt-2 uppercase tracking-wider">Season Record</p>
+    <!-- Radial progress visuals -->
+    <div class="flex flex-wrap justify-center gap-12 mb-16">
+      <div class="flex flex-col items-center gap-3">
+        <div class="radial-progress text-accent" style={`--value:${winPct}; --size:8rem; --thickness:6px;`} role="progressbar">
+          <span class="text-2xl font-heading font-bold">{winPct}%</span>
+        </div>
+        <p class="text-sm text-base-content/60 uppercase tracking-wider font-medium">Win Rate</p>
       </div>
-      <div class="text-center">
-        <p class="text-4xl md:text-5xl font-heading font-bold text-accent">{stats.points_per_game}</p>
-        <p class="text-sm text-base-content/50 mt-2 uppercase tracking-wider">PPG</p>
+      <div class="flex flex-col items-center gap-3">
+        <div class="radial-progress text-accent" style={`--value:${scoringEff}; --size:8rem; --thickness:6px;`} role="progressbar">
+          <span class="text-2xl font-heading font-bold">{scoringEff}%</span>
+        </div>
+        <p class="text-sm text-base-content/60 uppercase tracking-wider font-medium">Scoring Efficiency</p>
       </div>
-      <div class="text-center">
-        <p class="text-4xl md:text-5xl font-heading font-bold text-accent">{stats.tournament_wins}</p>
-        <p class="text-sm text-base-content/50 mt-2 uppercase tracking-wider">Tournament Wins</p>
+      <div class="flex flex-col items-center gap-3">
+        <div class="radial-progress text-accent" style={`--value:80; --size:8rem; --thickness:6px;`} role="progressbar">
+          <span class="text-2xl font-heading font-bold">80%</span>
+        </div>
+        <p class="text-sm text-base-content/60 uppercase tracking-wider font-medium">FT Percentage</p>
       </div>
-      <div class="text-center">
-        <p class="text-4xl md:text-5xl font-heading font-bold text-accent">{stats.players_developed}</p>
-        <p class="text-sm text-base-content/50 mt-2 uppercase tracking-wider">Athletes Trained</p>
-      </div>
-      <div class="text-center">
-        <p class="text-4xl md:text-5xl font-heading font-bold text-accent">{stats.years_active}</p>
-        <p class="text-sm text-base-content/50 mt-2 uppercase tracking-wider">Years Active</p>
+    </div>
+
+    <!-- Big number stats with DaisyUI stats component -->
+    <div class="flex justify-center">
+      <div class="stats stats-vertical lg:stats-horizontal shadow bg-base-200">
+        <div class="stat">
+          <div class="stat-title">Record</div>
+          <div class="stat-value text-accent">{stats.record}</div>
+          <div class="stat-desc">Season W-L</div>
+        </div>
+        <div class="stat">
+          <div class="stat-title">PPG</div>
+          <div class="stat-value text-accent">{stats.points_per_game}</div>
+          <div class="stat-desc">Points per game</div>
+        </div>
+        <div class="stat">
+          <div class="stat-title">Tournaments</div>
+          <div class="stat-value text-accent">{stats.tournament_wins}</div>
+          <div class="stat-desc">Championships won</div>
+        </div>
+        <div class="stat">
+          <div class="stat-title">Athletes</div>
+          <div class="stat-value text-accent">{stats.players_developed}</div>
+          <div class="stat-desc">Players trained</div>
+        </div>
+        <div class="stat">
+          <div class="stat-title">Years</div>
+          <div class="stat-value text-accent">{stats.years_active}</div>
+          <div class="stat-desc">Active seasons</div>
+        </div>
       </div>
     </div>
   </div>
