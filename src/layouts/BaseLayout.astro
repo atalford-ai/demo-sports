@@ -13,7 +13,7 @@ interface Props {
 const { title = config.business_name } = Astro.props;
 ---
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="synthwave">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -36,7 +36,7 @@ const { title = config.business_name } = Astro.props;
       const hour = new Date().getHours();
       const prefersDark = hour < 7 || hour >= 19;
       const saved = localStorage.getItem('elitehoops-theme');
-      const theme = saved || (prefersDark ? 'dark' : 'corporate');
+      const theme = saved || (prefersDark ? 'synthwave' : 'corporate');
       document.documentElement.setAttribute('data-theme', theme);
     })();
   </script>
